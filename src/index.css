@@ -1,0 +1,121 @@
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  /*height: 100%:*/
+  background-image: url('images/battlefield.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+h1 {
+  text-align: center;
+}
+
+.Playarea {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.Gameboard {
+  width: 80vw;
+  height: 80vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#card {
+  width:19%;
+  height: 24%;
+  background-color: hsla(133, 33%, 28%, 1);
+  border: 1px solid #000;
+  border-radius: 13px;
+  margin: auto;
+}
+
+.back {
+  background-image: url("images/badge.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.revealed.bomb {
+  background-image: url("images/bomb-1.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.revealed.bullet {
+  background-image: url("images/bullet.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.revealed.fighter {
+  background-image: url("images/fighter.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.revealed.cruiser {
+  background-image: url("images/cruiser.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.revealed.gas-mask {
+  background-image: url("images/gas-mask.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.revealed.grenade {
+  background-image: url("images/grenade.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.revealed.gun {
+  background-image: url("images/gun.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.revealed.launcher {
+  background-image: url("images/launcher.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.revealed.machine-gun {
+  background-image: url("images/machine-gun.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.revealed.tank {
+  background-image: url("images/tank.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
