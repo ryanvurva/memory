@@ -26,8 +26,8 @@ h1 {
 }
 
 .Gameboard {
-  width: 80vw;
-  height: 80vh;
+  width: 500px;
+  height: 400px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -37,85 +37,181 @@ h1 {
 #card {
   width:19%;
   height: 24%;
-  background-color: hsla(133, 33%, 28%, 1);
+  background-color: hsl(133, 33%, 28%);
   border: 1px solid #000;
   border-radius: 13px;
   margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.back {
+.top {
   background-image: url("images/badge.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  width: 90%;
+  height: 90%;
 }
 
-.revealed.bomb {
+.matched {
+  opacity: 0.5;
+  /*background-color: #666;*/
+}
+
+.revealed.bomb, .matched.bomb {
   background-image: url("images/bomb-1.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  width:90%;
+  height: 90%;
 }
 
-.revealed.bullet {
+.revealed.bullet, .matched.bullet {
   background-image: url("images/bullet.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  width:90%;
+  height: 90%;
 }
 
-.revealed.fighter {
+.revealed.fighter, .matched.fighter {
   background-image: url("images/fighter.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  width:90%;
+  height: 90%;
 }
 
-.revealed.cruiser {
+.revealed.cruiser, .matched.cruiser {
   background-image: url("images/cruiser.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  width:90%;
+  height: 90%;
 }
 
-.revealed.gas-mask {
+.revealed.gas-mask, .matched.gas-mask {
   background-image: url("images/gas-mask.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  width:90%;
+  height: 90%;
 }
 
-.revealed.grenade {
+.revealed.grenade, .matched.grenade {
   background-image: url("images/grenade.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  width:90%;
+  height: 90%;
 }
 
-.revealed.gun {
+.revealed.gun, .matched.gun {
   background-image: url("images/gun.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  width:90%;
+  height: 90%;
 }
 
-.revealed.launcher {
+.revealed.launcher, .matched.launcher {
   background-image: url("images/launcher.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  width:90%;
+  height: 90%;
 }
 
-.revealed.machine-gun {
+.revealed.machine-gun, .matched.machine-gun {
   background-image: url("images/machine-gun.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  width:90%;
+  height: 90%;
 }
 
-.revealed.tank {
+.revealed.tank, .matched.tank {
   background-image: url("images/tank.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  width:90%;
+  height: 90%;
+}
+
+/*modal*/
+.overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: hsla(133, 33%, 28%, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body:not(.modal) .overlay {
+    display: none;
+}
+
+body.modal main {
+    filter: blur(5px);
+}
+
+.dialog {
+    color: #fff;
+    background-color: hsla(133, 33%, 28%, 0.9);
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 3px;
+    box-shadow: 5px 5px 15px #000;
+
+    h4 {
+      margin: 10px auto;
+    }
+}
+
+button {
+  font-family: 'Nova Oval', cursive;
+  font-weight: bold;
+  font-size: 2em;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  border: 2px solid #000;
+  border-radius: 3px;
+  background-color:  hsla(133, 33%, 28%, 0.9);
+  text-shadow: 2px 2px 0 hsla(60, 0%, 48%, 0.9);
+  box-shadow: 2px 2px 5px hsla(60, 0%, 48%, 0.9);
+  color: #000;
+  transition: all 50ms linear;
+}
+
+button:focus {
+  outline: none;
+  border-color: #000;
+}
+
+button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 5px hsla(60, 0%, 48%, 0.9);
+}
+
+button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0.1em hsla(60, 0%, 48%, 0.9);
 }
