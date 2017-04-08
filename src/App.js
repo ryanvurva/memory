@@ -13,7 +13,6 @@ class App extends Component {
         <div className="Playarea">
           <Gameboard />
         </div>
-        {/* <Modal /> */}
       </div>
 
     );

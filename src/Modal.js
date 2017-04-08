@@ -2,12 +2,18 @@ import React, { Component } from 'react'
 
 class Modal extends Component {
 
+  clicked = () => {
+    // console.log('button clicked')
+    window.setTimeout(() => {
+      window.location.reload()
+    }, 1000)
+  }
+
   render() {
     return <div className="overlay">
       <div className="dialog">
-        <h3></h3>
-        <h4></h4>
-        <button>Play Again???</button>
+        <h3>Well Done!</h3>
+        <button onClick={ this.clicked }>Play Again???</button>
       </div>
     </div>
   }

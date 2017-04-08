@@ -11,6 +11,8 @@ body {
   background-size: cover;
   background-position: center;
   overflow: hidden;
+  font-family: 'Squada One', cursive;
+
 }
 
 h1 {
@@ -163,16 +165,8 @@ h1 {
     justify-content: center;
 }
 
-body:not(.modal) .overlay {
-    display: none;
-}
-
-body.modal main {
-    filter: blur(5px);
-}
-
 .dialog {
-    color: #fff;
+    color: hsl(57, 92%, 32%);
     background-color: hsla(133, 33%, 28%, 0.9);
     padding: 1em;
     display: flex;
@@ -180,23 +174,25 @@ body.modal main {
     align-items: center;
     border-radius: 3px;
     box-shadow: 5px 5px 15px #000;
+}
 
-    h4 {
-      margin: 10px auto;
-    }
+.dialog h3 {
+  text-shadow: 2px 2px 0 hsla(0, 0%, 23%, 0.9);
+  font-size: 1.5em;
+
 }
 
 button {
-  font-family: 'Nova Oval', cursive;
-  font-weight: bold;
-  font-size: 2em;
+  /*font-family: 'Nova Oval', cursive;*/
+  font-family: 'Squada One', cursive;
+  /*font-weight: bold;*/
+  font-size: 1.2em;
   margin-top: 2vh;
   margin-bottom: 2vh;
   border: 2px solid #000;
   border-radius: 3px;
   background-color:  hsla(133, 33%, 28%, 0.9);
-  text-shadow: 2px 2px 0 hsla(60, 0%, 48%, 0.9);
-  box-shadow: 2px 2px 5px hsla(60, 0%, 48%, 0.9);
+  box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.8);
   color: #000;
   transition: all 50ms linear;
 }
@@ -208,10 +204,10 @@ button:focus {
 
 button:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 4px 4px 5px hsla(60, 0%, 48%, 0.9);
+  box-shadow: 4px 4px 5px hsla(120, 92%, 9%, 0.9);
 }
 
 button:active {
   transform: translate(2px, 2px);
-  box-shadow: 0 0 0.1em hsla(60, 0%, 48%, 0.9);
+  box-shadow: 0 0 0.1em hsla(120, 92%, 9%, 0.9);
 }

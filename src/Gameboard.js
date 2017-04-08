@@ -7,7 +7,8 @@ class Gameboard extends Component {
   state = {
     cards: ['bomb', 'bullet', 'fighter', 'cruiser', 'gas-mask', 'grenade', 'gun', 'launcher', 'machine-gun', 'tank', 'bomb', 'bullet', 'fighter', 'cruiser', 'gas-mask', 'grenade', 'gun', 'launcher', 'machine-gun', 'tank'],
     picks: [],
-    matches: []
+    matches: [],
+    gameOver: false
   }
 
   flipCard = (flip) => {
@@ -30,12 +31,12 @@ class Gameboard extends Component {
       }, () => {
         if (this.state.matches.length === this.state.cards.length) {
           window.setTimeout(() => {
-            {document.querysSelector('body').className += 'modal'}
             this.setState({
               picks: [],
-              matches: []
+              matches: [],
+              gameOver: true
             })
-          }, 3000)
+          }, 500)
         }
       })
     }
@@ -43,10 +44,13 @@ class Gameboard extends Component {
       this.setState({
         picks: []
       })
-    }, 1000)
+    }, 500)
   }
 
   render () {
+    if (this.state.gameOver) {
+      return <Modal />
+    } else {
     return (
       <div className="Gameboard">
       <Card index={0} flipCard={this.flipCard} value={this.state.cards[0]} revealed={this.state.picks.includes(0)} matches={this.state.matches.includes(0)} />
@@ -69,8 +73,8 @@ class Gameboard extends Component {
       <Card index={17} flipCard={this.flipCard} value={this.state.cards[17]} revealed={this.state.picks.includes(17)} matches={this.state.matches.includes(17)} />
       <Card index={18} flipCard={this.flipCard} value={this.state.cards[18]} revealed={this.state.picks.includes(18)} matches={this.state.matches.includes(18)} />
       <Card index={19} flipCard={this.flipCard} value={this.state.cards[19]} revealed={this.state.picks.includes(19)} matches={this.state.matches.includes(19)} />
-      <Modal />
     </div>)
+  }
   }
 }
 export default Gameboard

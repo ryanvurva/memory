@@ -4,7 +4,6 @@ class Card extends Component {
 
   _click = () => {
     this.props.flipCard(this.props.index)
-    // this.props.checkForMatch(this.props.index)
 }
 
   render() {
