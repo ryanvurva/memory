@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 class Modal extends Component {
 
   clicked = () => {
-    // console.log('button clicked')
     window.setTimeout(() => {
       window.location.reload()
     }, 1000)
