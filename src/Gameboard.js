@@ -8,7 +8,8 @@ class Gameboard extends Component {
     cards: ['bomb', 'bullet', 'fighter', 'cruiser', 'gas-mask', 'grenade', 'gun', 'launcher', 'machine-gun', 'tank', 'bomb', 'bullet', 'fighter', 'cruiser', 'gas-mask', 'grenade', 'gun', 'launcher', 'machine-gun', 'tank'],
     picks: [],
     matches: [],
-    gameOver: false
+    gameOver: false,
+    attempts: []
   }
 
   flipCard = (flip) => {
@@ -16,9 +17,13 @@ class Gameboard extends Component {
     if (this.state.picks.length < 2) {
       this.setState({
         picks: [...this.state.picks, flip]
+        // attempts: [...this.state.attempts, flip]
       }, () => {
         if (this.state.picks.length === 2) {
           this.checkForMatch()
+          this.setState({
+            attempts: [...this.state.attempts, flip]
+          })
         }
       })
     }
@@ -29,7 +34,7 @@ class Gameboard extends Component {
       this.setState({
         matches: [...this.state.matches, ...this.state.picks]
       }, () => {
-        if (this.state.matches.length === this.state.cards.length) {
+        if (this.state.matches.length === this.state.cards.length || this.state.attempts.length === this.state.cards.length) {
           window.setTimeout(() => {
             this.setState({
               picks: [],
@@ -45,6 +50,16 @@ class Gameboard extends Component {
         picks: []
       })
     }, 500)
+  }
+
+  resetGame = (_click) => {
+    if (this.state.gameOver === true) {
+      this.setState({
+        picks: [],
+        matches: [],
+        gameOver: false
+      })
+    }
   }
 
   render () {

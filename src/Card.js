@@ -15,8 +15,8 @@ class Card extends Component {
 export default Card
 //
 // <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-//   <div class="flipper">
-//     <div class="top"></div>
-//     <div class="revealed"></div>
+//   <div id="card">
+//    <div className={`${this.props.value} top ${revealed} ${matches}`} onClick={this._click}></div>
+//     <div className="revealed"></div>
 //   </div>
 // </div>
