@@ -36,12 +36,21 @@ h1 {
   align-items: center;
 }
 
-#card {
+.card {
   width:19%;
   height: 24%;
   background-color: hsl(133, 33%, 28%);
   border: 1px solid #000;
   border-radius: 13px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flipper {
+  width: 100%;
+  height: 100%;
   margin: auto;
   display: flex;
   justify-content: center;
@@ -166,7 +175,7 @@ h1 {
 }
 
 .dialog {
-    color: hsl(57, 92%, 32%);
+    color: #fff;
     background-color: hsla(133, 33%, 28%, 0.9);
     padding: 1em;
     display: flex;
@@ -178,14 +187,14 @@ h1 {
 
 .dialog h3 {
   text-shadow: 2px 2px 0 hsla(0, 0%, 23%, 0.9);
-  font-size: 1.5em;
+  font-size: 1.5
 
 }
 
-button {
-  /*font-family: 'Nova Oval', cursive;*/
+/* gameOver button */
+
+button.endGame {
   font-family: 'Squada One', cursive;
-  /*font-weight: bold;*/
   font-size: 1.2em;
   margin-top: 2vh;
   margin-bottom: 2vh;
@@ -197,17 +206,84 @@ button {
   transition: all 50ms linear;
 }
 
-button:focus {
+button.endGame:focus {
   outline: none;
   border-color: #000;
 }
 
-button:hover {
+button.endGame:hover {
   transform: translate(-2px, -2px);
   box-shadow: 4px 4px 5px hsla(120, 92%, 9%, 0.9);
 }
 
-button:active {
+button.endGame:active {
   transform: translate(2px, 2px);
   box-shadow: 0 0 0.1em hsla(120, 92%, 9%, 0.9);
+}
+
+/* audio buttons */
+
+.audioButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: hsla(133, 33%, 28%, 0.7);
+  border: 1px solid #000;
+  border-radius: 13px;
+  margin-top: 50px;
+  padding: 12px 5px 10px 5px;
+}
+
+button.playButton,
+button.pauseButton {
+  border: none;
+  background-color: transparent;
+  /*margin-top: 2em;*/
+  /*margin-bottom: -4em;*/
+  /*font-size: 1.6em;*/
+  /*width: 50px;*/
+  margin: 0;
+  cursor: pointer;
+  transition: all 0.5s linear;
+}
+
+button.playButton:hover,
+button.pauseButton:hover,
+button.playButton:focus,
+button.pauseButton:focus  {
+  outline: 0;
+  /*border: none;*/
+  /*background-color: transparent;*/
+  cursor: pointer;
+
+}
+
+button.playButton:focus,
+button.playButton:active {
+  animation: pulse 0.62s 5;
+}
+
+button.pauseButton:focus,
+button.pauseButton:active {
+  animation: pulse 0.62s 5;
+}
+
+/* Pulsing animation */
+
+@keyframes pulse {
+
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.10, 1.10, 1.10);
+    transform: scale3d(1.10, 1.10, 1.10);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
 }
